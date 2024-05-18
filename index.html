@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLA-GPT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <h2>Saved Chats</h2>
+            <button id="clearHistoryBtn">Clear History</button>
+            <ul id="savedChatsList"></ul>
+        </div>
+        <div class="chat-container" id="container" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)">
+            <div class="chat-box" id="chatBox">
+                <div class="chat-bubble"><i class="fas fa-rocket chatbot-icon"></i> Welcome to SLA-GPT! Feel free to ask any questions regarding SLA.</div>
+            </div>
+            <div class="input-box">
+                <input type="text" id="userInput" placeholder="Enter your question here">
+                <button onclick="sendMessage()">Ask</button>
+                <button onclick="saveChat()">Save Chat</button>
+                <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
