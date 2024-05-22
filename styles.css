@@ -183,6 +183,10 @@ body.dark-mode {
     color: #fff;
 }
 
+.chat-container.dark-mode {
+    background-color: #5f5f5f;
+}
+
 .container.dark-mode {
     background-color: #333;
 }
