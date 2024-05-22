@@ -1,16 +1,16 @@
 function sendMessage() {
-    var userInput = document.getElementById("userInput").value;
-    if (userInput.trim() === "") return;
+    var userInput = document.getElementById("userInput").value; //Retrieves text or input
+    if (userInput.trim() === "") return; //If no text then does nothing
     if (userInput.trim() === "/clean") {
         clearChat(); // Call function to clear chat
         return;
     }
-    appendUserMessage(userInput);
-    getResponse(userInput);
-    document.getElementById("userInput").value = "";
+    appendUserMessage(userInput); //Puts message on display on the chatbox
+    getResponse(userInput); 
+    document.getElementById("userInput").value = ""; //Clears input field and gets ready for the next question
 }
 
-function appendUserMessage(message) {
+function appendUserMessage(message) { //User messages
     var chatBox = document.getElementById("chatBox");
     var userBubble = document.createElement("div");
     userBubble.classList.add("user-bubble");
@@ -19,7 +19,7 @@ function appendUserMessage(message) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-function appendBotMessage(message) {
+function appendBotMessage(message) { //Bot messages
     var chatBox = document.getElementById("chatBox");
     var botBubble = document.createElement("div");
     botBubble.classList.add("chat-bubble");
@@ -52,9 +52,11 @@ function toggleDarkMode() {
     var body = document.body;
     var inputBox = document.querySelector('.input-box input[type="text"]');
     var buttons = document.querySelectorAll('button');
+    var chatContainer = document.querySelector('.chat-container');
     body.classList.toggle("dark-mode");
     inputBox.classList.toggle("dark-mode");
     buttons.forEach(button => button.classList.toggle("dark-mode"));
+    chatContainer.classList.toggle("dark-mode");
 }
 
 function saveChat() {
